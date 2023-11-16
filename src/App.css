@@ -24,8 +24,8 @@ main {
 
 section {
   height: 100vh;
-  -webkit-scroll-snap-align: start;
-  scroll-snap-align: start;
+  -webkit-scroll-snap-align: center;
+  scroll-snap-align: center;
 }
 
 header {
