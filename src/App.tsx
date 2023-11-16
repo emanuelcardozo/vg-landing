@@ -1,5 +1,6 @@
 import Hero from './Hero/Hero';
 import Logo from './assets/Logo.png';
+import VideoSection from './VideoSection/VideoSection';
 import './App.css'
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
         <h2 className='header-title'>Virtual Gym</h2>
       </header>
       <main>
-        <Hero />
+        <VideoSection />
         <Hero />
       </main>
     </>

@@ -26,6 +26,8 @@ section {
   height: 100vh;
   -webkit-scroll-snap-align: center;
   scroll-snap-align: center;
+
+  background-color: black;
 }
 
 header {
@@ -81,4 +83,15 @@ header::before {
 
 .header-logo:hover {
   filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5));
+}
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: helvetica;
+  color: white;
 }
