@@ -1,3 +1,7 @@
+:root {
+  --header-height: 5rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,162 +10,59 @@
 
 body {
   height: 100vh;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
 }
 
-main {
-  position: relative;
+header {
   width: 100%;
-  height: 100%;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-}
-
-.item {
-  width: 200px;
-  height: 300px;
-  list-style-type: none;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  background-position: center;
-  background-size: cover;
-  border-radius: 20px;
-  box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
-  transition: transform 1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
-}
-
-.item:nth-child(1), .item:nth-child(2) {
-  left: 0;
+  height: var(--header-height);
+  padding: 1rem;
+  
+  position: fixed;
   top: 0;
+  z-index: 2;
+  
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  
+  font-family: arial, helvetica;
+
+  display: flex;
+  align-items: center;
+}
+
+header::before {
+  content: "";
+  background: inherit;
+  backdrop-filter: blur(5px);  /* Ajusta el valor de blur según tus necesidades */
+  -webkit-backdrop-filter: blur(5px);  /* Ajusta el valor de blur según tus necesidades */
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  transform: none;
-  border-radius: 0;
-  box-shadow: none;
-  opacity: 1;
+  z-index: -1;
 }
 
-.item:nth-child(3) { left: 50%; }
-.item:nth-child(4) { left: calc(50% + 220px); }
-.item:nth-child(5) { left: calc(50% + 440px); }
-.item:nth-child(6) { left: calc(50% + 660px); opacity: 0; }
-
-.item-content {
-  width: min(30vw, 400px);
-  position: absolute;
-  top: 50%;
-  left: 3rem;
-  transform: translateY(-50%);
-  font: 400 .85rem helvetica,sans-serif;
-  color: white;
-  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
-  opacity: 0;
-  display: none;
-}
-
-.item-title {
-  font-family: 'arial black',sans-serif;
-  text-transform: uppercase;
-}
-
-.item-description {
-  line-height: 1.7;
-  margin-top: 1rem 0 1.5rem;
-  font-size: .8rem;
-}
-
-.item-button {
-  width: fit-content;
-  background-color: rgba(0,0,0,0.1);
-  color: white;
-  border: 2px solid white;
-  border-radius: .25rem;
-  padding: .75rem;
+.header-logo {
+  width: 5rem;
   cursor: pointer;
+  transition: .25s;
 }
 
-.item:nth-of-type(2) .item-content {
-  display: block;
-  animation: show 0.75s ease-in-out 0.3s forwards;
-}
-
-@keyframes show {
-  0% {
-    filter: blur(5px);
-    transform: translateY(calc(-50% + 75px));
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-.slider-nav {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
+.header-title {
+  font-size: 2.5rem;
+  color: #EEE;
+  -webkit-text-stroke: .25px #333;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.25);
   user-select: none;
-}
-
-.slider-nav-prev, .slider-nav-next {
-  background-color: rgba(255, 255, 255, 0.5);
-  color: rgba(0,0,0,0.7);
-  border: 2px solid rgba(0,0,0,0.6);
-  margin: 0 0.25rem;
-  padding: 0.75rem;
-  border-radius: 50%;
+  -webkit-user-select: none;
   cursor: pointer;
+  transition: .25s;
 }
 
-.slider-nav-prev:hover, .slider-nav-next:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+.header-title:hover {
+  text-shadow: 0 3px 8px rgba(0,0,0,0.25);
 }
 
-@media (width > 650px) and (width < 900px) {
-  .item {
-    width: 160px;
-    height: 270px;
-  }
-  
-  .item:nth-child(3) { left: 50%; }
-  .item:nth-child(4) { left: calc(50% + 170px); }
-  .item:nth-child(5) { left: calc(50% + 340px); }
-  .item:nth-child(6) { left: calc(50% + 510px); opacity: 0; }
-
-  .item-title {
-    font-size: 1rem;
-  }
-  .item-description {
-    font-size: 0.7rem;
-  }
-  .item-button {
-    font-size: 0.7rem;
-  }
-}
-
-@media (width < 650px) {
-  .item {
-    width: 130px;
-    height: 220px;
-  }
-  
-  .item:nth-child(3) { left: 50%; }
-  .item:nth-child(4) { left: calc(50% + 140px); }
-  .item:nth-child(5) { left: calc(50% + 280px); }
-  .item:nth-child(6) { left: calc(50% + 420px); opacity: 0; }
-
-  .item-title {
-    font-size: .9rem;
-  }
-  .item-description {
-    font-size: 0.65rem;
-  }
-  .item-button {
-    font-size: 0.7rem;
-  }
+.header-logo:hover {
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.5));
 }
