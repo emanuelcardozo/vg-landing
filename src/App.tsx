@@ -9,8 +9,10 @@ function App() {
         <img src={Logo} alt='React Logo' className='header-logo' />
         <h2 className='header-title'>Virtual Gym</h2>
       </header>
-      <Hero />
-      <Hero />
+      <main>
+        <Hero />
+        <Hero />
+      </main>
     </>
   )
 }

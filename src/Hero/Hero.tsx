@@ -53,8 +53,8 @@ function Hero() {
   }
 
   return (
-    <div className="hero">
-      <main>   
+    <section>   
+      <div className="hero">
         <ul className='slider'>
           {
             items.map((item) => (
@@ -71,8 +71,8 @@ function Hero() {
           <button className='slider-nav-prev' onClick={prev}>{'<'}</button>
           <button className='slider-nav-next' onClick={next}>{'>'}</button>
         </nav>
-      </main>
-    </div>
+      </div>
+    </section>
   )
 }
 
