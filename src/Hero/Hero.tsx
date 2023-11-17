@@ -53,7 +53,7 @@ function Hero() {
   }
 
   return (
-    <section>   
+    <section id="hero">   
       <div className="hero">
         <ul className='slider'>
           {

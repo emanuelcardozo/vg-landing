@@ -1,6 +1,7 @@
 import Hero from './Hero/Hero';
 import Logo from './assets/Logo.png';
 import VideoSection from './VideoSection/VideoSection';
+import DownloadSection from './DownloadSection/DownloadSection';
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <main>
         <VideoSection />
         <Hero />
+        <DownloadSection />
       </main>
     </>
   )
