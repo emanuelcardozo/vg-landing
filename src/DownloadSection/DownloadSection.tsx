@@ -6,7 +6,10 @@ function DownloadSection() {
   return (
     <section id="download">
       <div className="download-container">
-        <div className="details-container">Disponible en:</div>
+        <div className="details-container">
+          <h1>Descarga la app!</h1>
+          <p>Disponible sólo para Android</p>
+        </div>
         <div className="qr-container">
           <img src={QRImage} alt="qr" />
         </div>
